@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* body{
+  background: rgb(5,6,8);
+  background: linear-gradient(129deg, rgba(5,6,8,1) 7%, rgba(12,20,53,1) 54%, rgba(0,0,0,1) 87%);
+  height: 100dvh;
+} */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.top-section,
+.bottom-section,
+.left-section,
+.right-section {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background-color: white;
+}
+
+.top-section {
+  top: 0;
+}
+
+.bottom-section {
+  bottom: 0;
+}
+
+.left-section {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+}
+
+.right-section {
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  
+}
+
