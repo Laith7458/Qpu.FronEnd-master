@@ -7,7 +7,9 @@ import axiosInstance from "@/app/shared/axiosinstance";
 export default function Login() {
     const [username, setUsername] = useState()
     const [password, setPassword] = useState()
-
+    if(localStorage.getItem("token") !=null) {
+        window.location.href = "/"
+    }
     function login() {
         axiosInstance.post("auth/student-login", {
             "id": {
@@ -18,6 +20,7 @@ export default function Login() {
             console.log(response)
             localStorage.setItem("token", response.data.token)
             console.log(localStorage.getItem("token"))
+            window.location.href = "/"
         }).then((error) => {
             console.log(error)
         })

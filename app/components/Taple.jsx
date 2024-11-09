@@ -4,7 +4,12 @@ import axiosInstance from "../shared/axiosinstance";
 
 export default function Taple() {
     const [trips, setTrips] = useState([]); 
-    const [loading, setLoading] = useState(true); 
+    const [loading, setLoading] = useState(true);
+
+    if(localStorage.getItem("token") ==null) {
+        window.location.href = "/login"
+    }
+
 
     function GetTrips() {
         axiosInstance.get("bus")
@@ -79,7 +84,7 @@ export default function Taple() {
                                     {trip.capacity}
                                 </td>
                                 <td className="px-6 py-4 text-center sm:text-left">
-                                    {formatTime(trip.startTime)}
+                                    {formatTime(trip.endTime)}
                                 </td>
                             </tr>
                         ))
